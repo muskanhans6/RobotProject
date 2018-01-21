@@ -129,7 +129,7 @@ void exercise_3()
 		enum T_exercise2_state {
 		MOTOR_STOP = 0,
 		MOTOR_RUNNING,
-		MOTOR_RUNNING_BACK
+		MOTOR_RUNNING_BACKWARD
 	};
 
 	T_exercise2_state exercise2_state = MOTOR_STOP;
@@ -154,7 +154,7 @@ void exercise_3()
 			}
 			else if ( button2_pushed ) {
 				// If button 1 pushed, switch to MOTOR_RUNNING state.
-				exercise2_state = MOTOR_RUNNING_BACK;
+				exercise2_state = MOTOR_RUNNING_BACKWARD;
 				// Reset encoder to get proper count.
 				resetMotorEncoder(motor1);
 
@@ -169,7 +169,7 @@ void exercise_3()
 				// If we have passed 627 ticks, transition to MOTOR_STOP state.
 
 				if(button2_during)
-					exercise2_state = MOTOR_RUNNING_BACK;
+					exercise2_state = MOTOR_RUNNING_BACKWARD;
 				else
 					exercise2_state = MOTOR_STOP;
 
@@ -190,7 +190,7 @@ void exercise_3()
 				//resetMotorEncoder(motor1);
 			}
 			break;
-		case 	MOTOR_RUNNING_BACK:
+		case 	MOTOR_RUNNING_BACKWARD:
 		// MOTOR_RUNNING state, turn motor on.
 			motor[motor1] = -50;
 
